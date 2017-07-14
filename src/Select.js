@@ -404,6 +404,12 @@ class Select extends React.Component {
 					event.stopPropagation();
 				}
 			break;
+			case 32: // space
+				if (event.shiftKey || !this.state.isOpen || !this.props.tabSelectsValue) {
+					return;
+				}
+				this.selectFocusedOption();
+			break;
 			case 38: // up
 				this.focusPreviousOption();
 			break;
